@@ -1,30 +1,3 @@
-// Manipulação do formulário de contato
-document.addEventListener('DOMContentLoaded', function () {
-	const contactForm = document.getElementById('contactForm');
-
-	if (contactForm) {
-		contactForm.addEventListener('submit', function (e) {
-			e.preventDefault();
-
-			// Coleta os dados do formulário
-			const formData = {
-				name: document.getElementById('name').value,
-				email: document.getElementById('email').value,
-				message: document.getElementById('message').value,
-			};
-
-			// Aqui você pode adicionar a lógica para enviar os dados para um servidor
-			console.log('Dados do formulário:', formData);
-
-			// Limpa o formulário
-			contactForm.reset();
-
-			// Mostra mensagem de sucesso
-			alert('Mensagem enviada com sucesso!');
-		});
-	}
-});
-
 // Adiciona classe 'active' ao link do menu atual
 document.addEventListener('DOMContentLoaded', function () {
 	const currentPage = window.location.pathname.split('/').pop();
@@ -48,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		navLinks.classList.toggle('active');
 	});
 
-	// Close menu when clicking a link
+	// Fechar menu ao clicar em um link
 	links.forEach((link) => {
 		link.addEventListener('click', () => {
 			hamburger.classList.remove('active');
@@ -56,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 
-	// Close menu when clicking outside
+	// Fechar menu ao clicar fora
 	document.addEventListener('click', function (event) {
 		const isClickInsideNav = navLinks.contains(event.target);
 		const isClickOnHamburger = hamburger.contains(event.target);
